@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 export const PostsContext = createContext();
 
 let initPostState = {
-    posts: {},
+    posts: [],
     error: "",
     loading: false,    
     }
@@ -16,8 +16,6 @@ let reducer = (postsState, action) => {
             return {...postsState, error:action.error, loading: false, }
         case "POSTS_SUCCESS":
             return {...postsState, posts: action.posts, loading:false}
-        case "SAVE_POSTS":
-            return {...postsState, posts: action.posts, loading:false,}
         default:
             throw new Error();
     }
@@ -25,11 +23,11 @@ let reducer = (postsState, action) => {
 
 export default function PostContext(props) {
 
-    let [postsState, dispatch] = useReducer(reducer, initPostState);
+    let [postsState, postsDispatch] = useReducer(reducer, initPostState);
 
     let globalPostsState = {
         postsState,
-        dispatch
+        postsDispatch
     };
 
   return (

@@ -2,7 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import Linkedin from '../assets/social/linkedin.svg';
 import Posts from '../components/posts/Posts';
 import { Context } from '../context/DataContext';
+import { PostsContext } from '../context/PostContext';
 import { GetUserAPI } from '../context/GetUserAPI';
+import { GetPostsAPI } from '../context/GetPostsAPI';
 import { BiMessageAdd } from 'react-icons/bi';
 import Popups from '../pages/Popups'
 import Additem from '../components/addPost/Additem';
@@ -10,6 +12,7 @@ import Additem from '../components/addPost/Additem';
 function Testimonials() {
 
   let {userState, dispatch} = useContext(Context);
+  let { postsState, postsDispatch } = useContext(PostsContext);
 
   let [closed, setclosed] = useState(false);
   let usePopup = {
@@ -17,15 +20,13 @@ function Testimonials() {
     setclosed
   }
 
-  
   useEffect(
     () => {
       GetUserAPI(dispatch);
+      GetPostsAPI (postsDispatch)
     },[]
     )
   
-    // console.log(userState.user);
-    
   const iconStyles = {
     width: 25,
     height: 25, 
@@ -57,8 +58,14 @@ function Testimonials() {
       </div> 
 
       <div className='flex w-full gap-3 my-5 justify-center flex-wrap'>
-        <Posts/>
-        <Posts/>
+        {
+          postsState.loading?
+          <p>Loading...</p>
+          :
+          !postsState.loading && postsState.posts.map(
+            post => <Posts key={post._id} photo={post.photo} name={post.name} email={post.email} post={post.post}/>
+          )
+        }
       </div>
 
       {

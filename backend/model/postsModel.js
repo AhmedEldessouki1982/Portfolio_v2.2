@@ -13,6 +13,9 @@ let postModel = {
         required: [true, "wrong name or missing"],
         unique: true,
     },
+    email: {
+        type: String,
+    },
     post: {
         type: String,
         required: [true, "Please add your endorsement"],

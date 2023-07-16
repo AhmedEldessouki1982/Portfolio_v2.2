@@ -4,26 +4,19 @@ import { PostsContext } from '../../context/PostContext';
 import { Context } from '../../context/DataContext';
 import { PostPostsAPI } from '../../context/PostPostsAPI';
 
-
 function Additem() {
   let { userState } = useContext(Context);
-  let { postsState } = useContext(PostsContext);
 
-  console.log(userState.user.user.displayName);
-
-
-
-  console.log(postsState);
   let [obj, setObj] = useState({});
 
-  let handleAddItem = (e) => {
+   let handleAddItem = (e) => {
     setObj (
       {
         ...obj,
         "photo": userState.user.user.photos[3].value,
         "name": userState.user.user.displayName,
+        "email": userState.user.user.emails[0].value,
         [e.target.name]: e.target.value,
-
       }
     )
   }
@@ -45,5 +38,4 @@ function Additem() {
     </div>
   )
 }
-
-export default Additem
+export default Additem;
