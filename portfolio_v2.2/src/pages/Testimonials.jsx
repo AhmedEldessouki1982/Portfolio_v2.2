@@ -8,6 +8,7 @@ import { GetPostsAPI } from '../context/GetPostsAPI';
 import { BiMessageAdd } from 'react-icons/bi';
 import Popups from '../pages/Popups'
 import Additem from '../components/addPost/Additem';
+import Loading from '../components/loading/Loading';
 
 function Testimonials() {
 
@@ -60,7 +61,7 @@ function Testimonials() {
       <div className='flex w-full gap-3 my-5 justify-center flex-wrap'>
         {
           postsState.loading?
-          <p>Loading...</p>
+          <Loading/>
           :
           !postsState.loading && postsState.posts.map(
             post => <Posts key={post._id} photo={post.photo} name={post.name} email={post.email} post={post.post}/>

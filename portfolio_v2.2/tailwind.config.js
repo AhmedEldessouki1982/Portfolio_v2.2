@@ -10,6 +10,7 @@ export default {
       animation: {
         "fadein": "fadein 10s linear infinite reverse",
         "lighting": "lighting 3s infinite",
+        "loading": "loading 1.5s linear infinite"
       },
       keyframes: {
         fadein : {
@@ -29,7 +30,6 @@ export default {
             "margin-top": "-16.75rem",
           }
         },
-
         lighting : {
           "0%" : {
             "text-shadow": "none",
@@ -39,6 +39,18 @@ export default {
           },
           "100%" : {
             "text-shadow": "none",
+          }
+        },
+        loading: {
+          "from": {
+            "width": "2.8rem",
+            "height": "2.8rem",
+            "transform": "rotate(0deg)",
+          },
+          "to": {
+            "width": "2rem",
+            "height": "2rem",
+            "transform": "rotate(360deg)",
           }
         }
       },
