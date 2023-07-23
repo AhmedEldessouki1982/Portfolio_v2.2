@@ -3,10 +3,11 @@ import { BsChatQuoteFill } from 'react-icons/bs';
 import { PostsContext } from '../../context/PostContext';
 import { Context } from '../../context/DataContext';
 import { PostPostsAPI } from '../../context/PostPostsAPI';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Additem() {
   let { userState } = useContext(Context);
-
   let [obj, setObj] = useState({});
 
    let handleAddItem = (e) => {
@@ -34,7 +35,8 @@ function Additem() {
         </div>
         <textarea onChange={handleAddItem} name='post' id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
       </div>
-      <button onClick={handlePostItem} className='absolute bottom-3 w-16 text-black bg-yellow rounded-lg cursor-pointer text-lg text-center capitalize hover:bg-slate-300 hover:text-black hover:duration-500'>post</button>
+      <button onClick={handlePostItem} className='absolute bottom-3 w-16 text-black bg-yellow rounded-lg cursor-pointer text-lg text-center capitalize hover:bg-slate-300 hover:text-black duration-100 active:bg-violet-700 active:scale-75'>post</button>
+      <ToastContainer />
     </div>
   )
 }

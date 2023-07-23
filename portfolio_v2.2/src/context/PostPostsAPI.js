@@ -11,7 +11,7 @@ export let PostPostsAPI = async (post) => {
         }
     ).catch (
         res => {
-            console.log(res.response.data.errors);
+            console.log(res.response.data.errors, res.response.status);
         }
     )
    
