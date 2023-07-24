@@ -3,6 +3,7 @@ import phone from '../../assets/social/phone.png';
 import linkedin from '../../assets/social/linkedin.png';
 import git from '../../assets/social/git.png';
 import useMediaQuery from '../../hooks/useMediaQuery'; 
+import DownloadLink from '../downloadLink/DownloadLink';
 
 export default function SocialMediaBar() {
     let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
@@ -35,6 +36,8 @@ export default function SocialMediaBar() {
                 </a>
             </li>
         </nav>
+       <DownloadLink />
+
     </div>
     :
     <div className='list-none flex gap-10 cursor-pointer'>
@@ -58,8 +61,6 @@ export default function SocialMediaBar() {
                 <img src={git} alt="git" />
             </a>
         </li>
-        
-
     </div>
     
   )

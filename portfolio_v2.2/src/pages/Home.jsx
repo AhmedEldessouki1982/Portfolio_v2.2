@@ -1,11 +1,8 @@
 import hero from '../assets/imgs/hero.jpeg'
 import SocialMediaBar from '../components/SocialMediaBar/SocialMediaBar';
-import { GiHamburgerMenu } from 'react-icons/gi'
-import useMediaQuery from '../hooks/useMediaQuery'; 
 
-function Home({ opened, setOpened }) {
-  let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
-
+function Home() {
+  
   return (
     <section className="flex justify-between content-center flex-col-reverse md:flex-row items-center">
     {/*hero section for text */}
@@ -27,4 +24,4 @@ function Home({ opened, setOpened }) {
   )
 }
 
-export default Home
+export default Home;
