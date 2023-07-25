@@ -36,7 +36,7 @@ function Testimonials() {
     }
 
 	const linkedinAuth = () => {
-		window.open(`https://eldessouki.vercel.app/auth/linkedin/callback`, "_self");
+		window.open(`https://eldessouki-api.vercel.app/auth/linkedin/callback`, "_self");
 	};
 
   return (
