@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = "http://localhost:8000/api/v1/posts";
+const url = "https://eldessouki-api.vercel.app/api/v1/posts";
 
 export let GetPostsAPI = async (dispatch) => {
     dispatch(
