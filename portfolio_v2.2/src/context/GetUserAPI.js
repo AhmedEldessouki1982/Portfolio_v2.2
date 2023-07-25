@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = "http://localhost:8000/auth/getuser";
+const url = "https://eldessouki-api.vercel.app/auth/getuser";
 
 export let GetUserAPI = async (dispatch) => {
     dispatch(
